@@ -1,7 +1,7 @@
 <footer>
 	<div class="footer_container">
-		<div class="footer_copyright">© Denis Vdovin 2020</div>
+		<div class="footer_copyright">© {{ .Site.Params.author }} {{ .Now.Year }}</div>
 	</div>
 </footer>
-{{ partial "assets/scripts.html" -}}
-{{ partial "analytics/yandex_metrika" }}
+{{ partial "assets/scripts" -}}
+{{ partial "analytics/yandex_metrika" . -}}
