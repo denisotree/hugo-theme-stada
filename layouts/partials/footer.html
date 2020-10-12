@@ -1,6 +1,6 @@
 <footer>
 	<div class="footer_container">
-		<div class="footer_copyright">© {{ .Site.Params.author }} {{ .Now.Year }}</div>
+		<div class="footer_copyright">© {{ .Site.Params.author }} {{ now.Format "2006" }}</div>
 	</div>
 </footer>
 {{ partial "assets/scripts" -}}
