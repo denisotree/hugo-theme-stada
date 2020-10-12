@@ -1,0 +1,33 @@
+{{ $pages := .Pages }}
+{{ if .IsHome }}
+  {{ $pages = where .Site.RegularPages "Type" "in" .Site.Params.mainSections }}
+{{ end }}
+<div class="articles_container">
+  <div class="articles_list">
+    {{ range $pages }}
+    <div class="article_preview">
+      {{with .Params.featured_image}}
+      <div class="article_preview_image" style="background-image: url('{{ . }}')"></div>
+      {{ end }}
+      <div class="article_preview_text">
+        <div class="article_preview_text_container">
+          <div class="article_preview_title"><a href="{{ .RelPermalink }}" title="{{ .Title }}">{{ .Title }}</a></div>
+          <div class="article_preview_info">
+            <div class="article_preview_info_time">{{ .Date.Format "2006-01-02 15:04:05" }}</div>
+            <div class="article_preview_info_tags">
+              {{ range .Params.tags }}
+              <span><a href="tags/{{ . | urlize }}">{{ . }}</a></span>
+              {{ end }}
+            </div>
+          </div>
+          <div class="article_preview_summary">
+            <a href="{{ .Permalink }}">
+              {{ .Summary }}
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+    {{ end }}
+  </div>
+</div>

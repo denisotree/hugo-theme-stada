@@ -1,0 +1,37 @@
+<header>
+	<div class="header_container">
+		<div class="header_logo"><a href="/"><span>{{ .Site.Params.title }}</span></a></div>
+		<div class="header_menu">
+			<ul>
+				{{ $url := .RelPermalink }}
+				{{ range .Site.Menus.main }}
+				{{ $active := eq $url .URL }}
+				<li><a {{if $active }}class="current"{{end}} href="{{ .URL }}" title="{{ .Title }}">{{ .Name }}</a></li>
+				{{ end }}
+			</ul>
+		</div>
+		<div class="header_social">
+			{{ range $item := .Site.Params.socialIcons }}
+			<span><a href="{{ $item.url }}" target="_blank" rel="noopener noreferrer"><i class="fab {{ $item.icon }}"></i></a></span>
+			{{ end }}
+			<div class="header_mode">
+				<span class="mode_button"><i class="fas fa-adjust"></i></span>
+			</div>
+		</div>
+	</div>
+	<div class="header_mob_menu_button" id="mobMenuButton"><i class="fas fa-bars"></i></div>
+	<div class="header_mob_menu" id="mobMenu">
+		<div class="header_mob_menu_container">
+			<div class="header_mob_menu_close" id="mobMenuCloseButton"><i class="fas fa-times"></i></div>
+			<div class="header_mob_menu_list">
+				<ul>
+					{{ $url := .RelPermalink }}
+					{{ range .Site.Menus.main }}
+					{{ $active := eq $url .URL }}
+					<li><a href="{{ .URL }}" title="{{ .Title }}">{{ .Name }}</a></li>
+					{{ end }}
+				</ul>
+			</div>
+		</div>
+	</div>
+</header>

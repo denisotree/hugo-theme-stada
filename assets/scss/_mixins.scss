@@ -1,0 +1,20 @@
+@mixin horisontal_flex {
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+}
+
+@mixin block_shadow {
+	box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+@mixin base_container {
+	max-width: 1366px;
+	margin: auto;
+}
+
+@mixin simple_text {
+	font-size: 1rem;
+	line-height: 1.5;
+}

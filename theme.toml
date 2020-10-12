@@ -1,0 +1,12 @@
+name = "Stada"
+description = "Clean minimalistic theme with nice adaptive"
+homepage = "https://github.com/denisotree/hugo-theme-sträda"
+license = "GPLv2"
+licenselink = "http://www.gnu.org/licenses/old-licenses/gpl-2.0.html"
+tags = ["responsive", "blog", "minimalistic", "clean", "pure", "sträda"]
+features = ["responsive", "grid", "sass"]
+min_version = "0.0.1"
+
+[author]
+  name = "Denis Vdovin"
+  homepage = "https://dblog.me/"

@@ -1,0 +1,4 @@
+{{ $stylesTranslateOptions := (dict "targetPath" "css/styles.css" "outputStyle" "compressed" "enableSourceMap" true) -}}
+{{ $stylesTranslate := resources.Get "scss/desktop.scss" | toCSS $stylesTranslateOptions -}}
+{{ $stylesTranslate = $stylesTranslate | fingerprint -}}
+<link rel="stylesheet" href="{{ $stylesTranslate.RelPermalink }}">

@@ -1,0 +1,14 @@
+  {{ define "main" }}
+  <article>
+    <div class="article_content">
+      <div class="article_title">
+        <h1>{{ .Title }}</h1>
+      </div>
+      <div class="article_info">
+        <span><i class="fas fa-clock"></i>{{ .Date.Format "2006-01-02 15:04:05" }}</span>
+        <span><i class="fas fa-bookmark"></i>{{ .ReadingTime }} minutes read</span>
+      </div>
+      {{ .Content }}
+    </div>
+  </article>
+  {{ end }}
