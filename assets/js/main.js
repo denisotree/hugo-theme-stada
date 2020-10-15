@@ -7,7 +7,7 @@ function toggleVisible(el) {
 };
 
 function delayedCall(callback, timeout, params) {
-    setTimeout(function() { callback.apply(null, params); }, timeout);
+	setTimeout(function() { callback.apply(null, params); }, timeout);
 }
 
 function fadeIn(el) {
@@ -44,3 +44,45 @@ mobMenuButton.addEventListener("click", function () {
 mobMenuCloseButton.addEventListener("click", function () {
 	toggleFade(mobMenu);
 });
+
+
+function getCurrentTheme(){
+	return localStorage.getItem('theme') ? localStorage.getItem('theme') : null;
+}
+
+function setTheme(theme){
+	document.documentElement.setAttribute('data-theme', theme);
+	localStorage.setItem('theme', theme);  
+}
+
+
+function switchTheme(e) {
+	var theme = getCurrentTheme();
+	if (theme == 'light') {
+		setTheme('dark');
+	}
+	else {
+		setTheme('light');
+	}
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+	var themeSwitcher = document.querySelector('.mode_button');
+	themeSwitcher.addEventListener('click', switchTheme, false);
+}, false);
+
+var theme = getCurrentTheme();
+
+var userDefault = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+if (theme === null) {
+	if(userDefault){
+		setTheme('dark');
+	}
+	else{
+		setTheme('light');
+	}
+}
+else {
+	document.documentElement.setAttribute('data-theme', theme);
+}    

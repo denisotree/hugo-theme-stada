@@ -9,6 +9,20 @@
 
 @import 'mixins';
 
+:root {
+  --bg-color:#{$light_color};
+  --code-bg-color:#{$code_bg_color};
+  --text-color:#{$default_color};
+  --tag-bg-color:#{$tag_bg_color};
+}
+
+html[data-theme='dark'] {
+  --bg-color:#{$default_color};
+  --code-bg-color:#{$code_bg_color_dark};
+  --text-color:#{$light_color};
+  --tag-bg-color:#{$tag_bg_color_dark};
+}
+
 /* RESET STYLES */
 
 html, body, div, span, applet, object, iframe,
@@ -29,7 +43,7 @@ time, mark, audio, video {
 	border: 0;
 	font-size: 100%;
 	vertical-align: baseline;
-	color: $default_color;
+	color: var(--text-color);
 }
 
 article, aside, details, figcaption, figure, 
@@ -59,6 +73,7 @@ table {
 
 body {
 	font-family: Montserrat, sans-serif;
+	background-color: var(--bg-color);
 }
 
 .fade_show {
@@ -225,7 +240,7 @@ main {
 	@include horisontal_flex;
 	align-items: center;
 	span {
-		background-color: $tag_bg_color;
+		background-color: var(--tag-bg-color);
 		padding: .2rem .4rem;
 		margin: 0 .2rem;
 		border-radius: 2px;
@@ -233,7 +248,7 @@ main {
 			font-size: .7rem;
 			text-decoration: none;
 			text-transform: lowercase;
-			color: $light_color;
+			color: var(--bg-color);
 			line-height: 1;
 		}
 	}
@@ -326,10 +341,9 @@ article {
 	pre {
 		position: relative;
 		display: block;
-		background: #f4f4f4;
-		border: 1px solid #default_color;
+		background: var(--code-bg-color);
+		border: 1px solid var(--text-color);
 		border-left: 3px solid $accent_color;
-		color: $default_color;
 		page-break-inside: avoid;
 		font-family: monospace;
 		font-size: 1.2rem;		
@@ -342,6 +356,7 @@ article {
 		code {
 			display: block;
 			line-height: 1.5;
+			color: var(--text-color);
 		}
 	}
 	img {
