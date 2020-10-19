@@ -10,17 +10,17 @@
 @import 'mixins';
 
 :root {
-  --bg-color:#{$light_color};
-  --code-bg-color:#{$code_bg_color};
-  --text-color:#{$default_color};
-  --tag-bg-color:#{$tag_bg_color};
+	--bg-color:#{$light_color};
+	--code-bg-color:#{$code_bg_color};
+	--text-color:#{$default_color};
+	--tag-bg-color:#{$tag_bg_color};
 }
 
 html[data-theme='dark'] {
-  --bg-color:#{$default_color};
-  --code-bg-color:#{$code_bg_color_dark};
-  --text-color:#{$light_color};
-  --tag-bg-color:#{$tag_bg_color_dark};
+	--bg-color:#{$default_color};
+	--code-bg-color:#{$code_bg_color_dark};
+	--text-color:#{$light_color};
+	--tag-bg-color:#{$tag_bg_color_dark};
 }
 
 /* RESET STYLES */
@@ -329,19 +329,85 @@ article {
 			margin: 0 0.5rem 0 0;
 		}
 	}
+	h1 {
+		font-weight: 600;
+		font-size: 2rem;
+		margin: 2rem 0;
+	}
 	h2 {
 		font-weight: 600;
 		font-size: 1.5rem;
 		margin: 2rem 0;
 	}
+	h3, h4, h5, h6 {
+		font-size: 1.3rem;
+		font-weight: 600;
+		margin: 1rem 0;
+	}
+	h4 {
+		font-size: 1.2rem;
+	}
+	h5 {
+		font-size: 1.1rem;
+	}
+	h6 {
+		font-size: 1rem;
+	}
 	p {
 		@include simple_text;
 		margin-bottom: 1rem;
 	}
+	code {
+		background: var(--code-bg-color);
+		padding: 0.2rem 0.5rem;
+		border-radius: 5px;
+	}
+	blockquote {
+		position: relative;
+		vertical-align: baseline;
+		background: var(--code-bg-color);
+		border-left: .5rem solid $accent_color;
+		margin: 1.5rem 1rem;
+		padding: 0.5rem 1rem;
+	}
+	blockquote p {
+		margin-bottom: 0;
+	}
+	table {
+		width: 100%;
+		max-width: 100%;
+		margin-bottom: 1rem;
+		background-color: var(--code-bg-color);
+		border-collapse: collapse;
+	}
+	thead {
+		th {
+			border-bottom: 3px solid var(--text-color);
+			border-top: 0
+		}
+	}
+	th, td {
+		text-align: left;
+		padding: 1rem;
+		border-top: 1px solid var(--text-color);
+	}
+	sub, sup {
+		font-size: 75%;
+		line-height: 0;
+		position: relative;
+		vertical-align: baseline;
+		right: -0.25rem;
+	}
+	sup {
+		top: -0.5rem;
+	}
+	sub {
+		bottom: -0.25rem;
+	}
 	pre {
 		position: relative;
 		display: block;
-		background: var(--code-bg-color);
+		background-color: var(--code-bg-color)!important;
 		border: 1px solid var(--text-color);
 		border-left: 3px solid $accent_color;
 		page-break-inside: avoid;
@@ -358,6 +424,18 @@ article {
 			line-height: 1.5;
 			color: var(--text-color);
 		}
+	}
+	ul, ol {
+		padding: 1rem 0 1rem 2rem;
+		li {
+			margin-bottom: 1rem;
+		}
+	}
+	ol {
+		list-style-type: decimal;
+	}
+	ul {
+		list-style-type: disc;
 	}
 	img {
 		max-width: 100%;
