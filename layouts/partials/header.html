@@ -1,6 +1,6 @@
 <header>
 	<div class="header_container">
-		<div class="header_logo"><a href="/"><span>{{ .Site.Params.title }}</span></a></div>
+		<div class="header_logo"><a href="{{ .Site.BaseURL }}"><span>{{ .Site.Params.title }}</span></a></div>
 		<div class="header_menu">
 			<ul>
 				{{ $url := .RelPermalink }}
