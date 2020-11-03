@@ -1,0 +1,51 @@
+baseURL = "https://example.com"
+languageCode = "en-us"
+title = "Main page title"
+theme = "stada"
+enableEmoji = true
+enableRobotsTXT = true
+
+tags = ["travels", "it"]
+
+[params]
+title = "Awesome clean hugo theme"
+description = "Awesome clean hugo theme"
+author = "Author Name"
+bio = "Author biography"
+profilePicture = "images/profile.jpg"
+favicon = "favicons/"
+mainSections = ['travels', 'it']
+yandexCounterId = 99999999 # counter ID from https://metrika.yandex.ru
+
+[[params.socialIcons]]
+icon = "fa-linkedin"
+title = "Linkedin"
+url = "https://www.linkedin.cn/"
+
+[[params.socialIcons]]
+icon = "fa-github"
+title = "GitHub"
+url = "https://github.com/"
+
+[[params.socialIcons]]
+icon = "fa-instagram"
+title = "instagram"
+url = "https://www.instagram.com/"
+
+[[menu.main]]
+name = "All articles"
+identifier = "home"
+weight = 100
+url = "/"
+
+[[menu.main]]
+name = "Travels"
+weight = 200
+identifier = "travels"
+url = "/travels/"
+
+[[menu.main]]
+name = "Technologies"
+weight = 300
+identifier = "it"
+url = "/it/"
