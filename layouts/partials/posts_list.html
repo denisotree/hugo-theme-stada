@@ -16,7 +16,7 @@
             <div class="article_preview_info_time">{{ .Date.Format "2006-01-02 15:04:05" }}</div>
             <div class="article_preview_info_tags">
               {{ range .Params.tags }}
-              <span><a href="tags/{{ . | urlize }}">{{ . }}</a></span>
+              <span><a href="/tags/{{ . | urlize }}">{{ . }}</a></span>
               {{ end }}
             </div>
           </div>
