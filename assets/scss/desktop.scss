@@ -1,26 +1,27 @@
-@import 'fonts';
+@use 'sass:color';
 
-@import 'variables';
+@use 'fonts';
+@use 'variables';
+@use 'mixins';
 
-@import '../lib/font-awesome/scss/fontawesome';
-@import '../lib/font-awesome/scss/brands';
-@import '../lib/font-awesome/scss/regular';
-@import '../lib/font-awesome/scss/solid';
 
-@import 'mixins';
+@use '../lib/font-awesome/scss/fontawesome';
+@use '../lib/font-awesome/scss/brands';
+@use '../lib/font-awesome/scss/regular';
+@use '../lib/font-awesome/scss/solid';
 
 :root {
-	--bg-color:#{$light_color};
-	--code-bg-color:#{$code_bg_color};
-	--text-color:#{$default_color};
-	--tag-bg-color:#{$tag_bg_color};
+	--bg-color:#{variables.$light_color};
+	--code-bg-color:#{variables.$code_bg_color};
+	--text-color:#{variables.$default_color};
+	--tag-bg-color:#{variables.$tag_bg_color};
 }
 
 html[data-theme='dark'] {
-	--bg-color:#{$default_color};
-	--code-bg-color:#{$code_bg_color_dark};
-	--text-color:#{$light_color};
-	--tag-bg-color:#{$tag_bg_color_dark};
+	--bg-color:#{variables.$default_color};
+	--code-bg-color:#{variables.$code_bg_color_dark};
+	--text-color:#{variables.$light_color};
+	--tag-bg-color:#{variables.$tag_bg_color_dark};
 }
 
 /* RESET STYLES */
